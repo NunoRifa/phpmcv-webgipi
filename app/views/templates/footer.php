@@ -5,11 +5,10 @@
                 <div class="col-lg-3 col-md-6 footer-contact">
                     <h3>LOGO PT</h3>
                     <p>
-                        Jln. Yos Sudarso, Nawaripi-Timika <br>
-                        Kec. Mimika Baru, Kabupaten Mimika<br>
-                        Papua <br><br>
-                        <strong>E-mail:</strong> <?= EMAIL; ?><br>
-                        <strong>Telepon:</strong> <?= PHONE; ?><br>
+                        <?= $data['getDataGeneral']['alamat'] ?>
+                        <br><br>
+                        <strong>E-mail:</strong> <?= $data['getDataGeneral']['email'] ?><br>
+                        <strong>Telepon:</strong> <?= $data['getDataGeneral']['phone'] ?><br>
                     </p>
                 </div>
                 <div class="col-lg-3 col-md-6 footer-links">
@@ -32,10 +31,9 @@
                     <h4>Sosial Media Kami</h4>
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, hic.</p>
                     <div class="social-links mt-3">
-                        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                        <a href="<?= $data['getDataGeneral']['facebook'] ?>" class="facebook"><i class="bx bxl-facebook"></i></a>
+                        <a href="<?= $data['getDataGeneral']['instagram'] ?>" class="instagram"><i class="bx bxl-instagram"></i></a>
+                        <a href="<?= $data['getDataGeneral']['whatsapp'] ?>" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
                     </div>
                 </div>
             </div>

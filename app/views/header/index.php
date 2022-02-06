@@ -12,20 +12,20 @@
                     <div class="col-6">
                         <div class="form-group">
                             <input type="hidden" name="id" id="id" value="<?= $data['id'] ?>">
-                            <label for="judul">Judul</label>
-                            <input type="text" name="judul" id="judul" class="form-control" value="<?= $data['judul_header'] ?>" placeholder="Judul website">
+                            <label for="judul_header">Judul</label>
+                            <input type="text" name="judul_header" id="judul_header" class="form-control" value="<?= $data['judul_header'] ?>" placeholder="Judul website">
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="form-group">
-                            <label for="judul_warna">Judul Berwarna</label>
-                            <input type="text" name="judul_warna" id="judul_warna" class="form-control" value="<?= $data['judul_warna_header'] ?>" placeholder="Judul website berwarna">
+                            <label for="judul_warna_header">Judul Berwarna</label>
+                            <input type="text" name="judul_warna_header" id="judul_warna_header" class="form-control" value="<?= $data['judul_warna_header'] ?>" placeholder="Judul website berwarna">
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="kontent">Konten</label>
-                    <textarea name="kontent" id="kontent" class="form-control" rows="3" placeholder="Masukan Teks ..."><?= $data['konten_header'] ?></textarea>
+                    <label for="konten_header">Konten</label>
+                    <textarea name="konten_header" id="konten_header" class="form-control" rows="3" placeholder="Masukan Teks ..."><?= $data['konten_header'] ?></textarea>
                 </div>
             </div>
             <div class="card-footer">

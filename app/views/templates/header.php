@@ -25,14 +25,13 @@
     <section id="topbar" class="d-flex align-items-center">
         <div class="container d-flex justify-content-center justify-content-md-between">
             <div class="contact-info d-flex align-items-center">
-                <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:<?= EMAIL; ?>"><?= EMAIL; ?></a></i>
-                <i class="bi bi-phone d-flex align-items-center ms-4"><span><?= PHONE; ?></span></i>
+                <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:<?= $data['getDataGeneral']['email'] ?>"><?= $data['getDataGeneral']['email'] ?></a></i>
+                <i class="bi bi-phone d-flex align-items-center ms-4"><span><?= $data['getDataGeneral']['phone'] ?></span></i>
             </div>
             <div class="social-links d-none d-md-flex align-items-center">
-                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+                <a href="<?= $data['getDataGeneral']['facebook'] ?>" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+                <a href="<?= $data['getDataGeneral']['instagram'] ?>" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="<?= $data['getDataGeneral']['whatsapp'] ?>" class="whatsapp" target="_blank"><i class="bi bi-whatsapp"></i></i></a>
             </div>
         </div>
     </section>

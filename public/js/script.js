@@ -15,13 +15,15 @@ $(function () {
     $(".modal-footer button[type=submit]").html("Ubah Data");
     $(".modal-body form").attr(
       "action",
-      "http://localhost/website-pt/public/mahasiswa/ubah"
+      "https://giripermataindo.com/mahasiswa/ubah"
+      // "http://localhost/website-pt/public/mahasiswa/ubah"
     );
 
     const id = $(this).data("id");
 
     $.ajax({
-      url: "http://localhost/website-pt/public/mahasiswa/getubah",
+      url: "https://giripermataindo.com/mahasiswa/getubah",
+      // url: "http://localhost/website-pt/public/mahasiswa/getubah",
       data: { id: id },
       method: "post",
       dataType: "json",
@@ -53,13 +55,15 @@ $(function () {
     $(".modal-footer button[type=submit]").html("Simpan");
     $(".modal-content form").attr(
       "action",
-      "http://localhost/website-pt/public/Admin/ubahServices"
+      "https://giripermataindo.com/Admin/ubahServices"
+      // "http://localhost/website-pt/public/Admin/ubahServices"
     );
 
     const id = $(this).data("id");
 
     $.ajax({
-      url: "http://localhost/website-pt/public/Admin/getUbahService",
+      url: "https://giripermataindo.com/Admin/getUbahService",
+      // url: "http://localhost/website-pt/public/Admin/getUbahService",
       data: { id: id },
       method: "post",
       dataType: "json",
@@ -90,13 +94,15 @@ $(function () {
     $(".modal-footer button[type=submit]").html("Simpan");
     $(".modal-content form").attr(
       "action",
-      "http://localhost/website-pt/public/Admin/ubahGambarGallery"
+      "https://giripermataindo.com/Admin/ubahGambarGallery"
+      // "http://localhost/website-pt/public/Admin/ubahGambarGallery"
     );
 
     const id = $(this).data("id");
 
     $.ajax({
-      url: "http://localhost/website-pt/public/Admin/getUbahGallery",
+      url: "https://giripermataindo.com/Admin/getUbahGallery",
+      // url: "http://localhost/website-pt/public/Admin/getUbahGallery",
       data: { id: id },
       method: "post",
       dataType: "json",
@@ -137,13 +143,15 @@ $(function () {
     $(".modal-footer button[type=submit]").html("Simpan");
     $(".modal-content form").attr(
       "action",
-      "http://localhost/website-pt/public/Admin/ubahDataPortCon"
+      "https://giripermataindo.com/Admin/ubahDataPortCon"
+      // "http://localhost/website-pt/public/Admin/ubahDataPortCon"
     );
 
     const id = $(this).data("id");
 
     $.ajax({
-      url: "http://localhost/website-pt/public/Admin/getPortConById",
+      url: "https://giripermataindo.com/Admin/getPortConById",
+      // url: "http://localhost/website-pt/public/Admin/getPortConById",
       data: { id: id },
       method: "post",
       dataType: "json",

@@ -7,6 +7,7 @@ class Visi extends Controller {
         $data['listPage'] = $this->model('User_model')->getListNav();
         $data['simpleLink'] = $this->model('User_model')->getSimpleLink();
         /* Visi & Misi */
+        $data['getDataGeneral'] = $this->model('User_model')->getGeneral();
         $data['getDataSecVisi'] = $this->model('User_model')->getSecVisi();
         $data['getDataVisi'] = $this->model('User_model')->getVisi();
         $data['getDataMisi'] = $this->model('User_model')->getMisi();

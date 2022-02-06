@@ -80,6 +80,40 @@ class User_model
         return $this->simpleLink;
     }
 
+    
+    /* ============================ General ============================ */
+    public function getGeneral()
+    {
+        $this->db->query('SELECT * FROM general');
+        return $this->db->single();
+    }
+
+    public function ubahDataGeneral($data)
+    {
+        $query = "UPDATE general 
+                    SET email = :email,
+                        phone = :phone,
+                        facebook = :facebook,
+                        instagram = :instagram,
+                        whatsapp = :whatsapp,
+                        alamat = :alamat
+                    WHERE id = :id";
+
+        $this->db->query($query);
+        $this->db->bind('email', $data['email']);
+        $this->db->bind('phone', $data['phone']);
+        $this->db->bind('facebook', $data['facebook']);
+        $this->db->bind('instagram', $data['instagram']);
+        $this->db->bind('whatsapp', $data['whatsapp']);
+        $this->db->bind('alamat', $data['alamat']);
+        $this->db->bind('id', $data['id']);
+
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
+    /* ============================ End General ============================ */
+
+
     /* ============================ Header ============================ */
     public function getAllHeader()
     {
@@ -90,15 +124,15 @@ class User_model
     public function ubahDataHeader($data)
     {
         $query = "UPDATE header 
-                    SET judul = :judul,
-                        judul_warna = :judul_warna,
-                        kontent = :kontent
+                    SET judul_header = :judul_header,
+                        judul_warna_header = :judul_warna_header,
+                        konten_header = :konten_header
                     WHERE id = :id";
 
         $this->db->query($query);
-        $this->db->bind('judul', $data['judul']);
-        $this->db->bind('judul_warna', $data['judul_warna']);
-        $this->db->bind('kontent', $data['kontent']);
+        $this->db->bind('judul_header', $data['judul_header']);
+        $this->db->bind('judul_warna_header', $data['judul_warna_header']);
+        $this->db->bind('konten_header', $data['konten_header']);
         $this->db->bind('id', $data['id']);
 
         $this->db->execute();
@@ -120,7 +154,6 @@ class User_model
                         SET judul_section = :judul_section,
                             judul = :judul,
                             judul_warna = :judul_warna,
-                            desc_judul = :desc_judul,
                             judul_konten = :judul_konten,
                             konten_tentang = :konten_tentang
                         WHERE id = :id";
@@ -129,7 +162,6 @@ class User_model
             $this->db->bind('judul_section', $data['judul_section']);
             $this->db->bind('judul', $data['judul']);
             $this->db->bind('judul_warna', $data['judul_warna']);
-            $this->db->bind('desc_judul', $data['desc_judul']);
             $this->db->bind('judul_konten', $data['judul_konten']);
             $this->db->bind('konten_tentang', $data['konten_tentang']);
             $this->db->bind('id', $data['id']);
@@ -152,7 +184,6 @@ class User_model
                             SET judul_section = :judul_section,
                                 judul = :judul,
                                 judul_warna = :judul_warna,
-                                desc_judul = :desc_judul,
                                 gambar_tentang = :gambar_tentang,
                                 judul_konten = :judul_konten,
                                 konten_tentang = :konten_tentang
@@ -162,7 +193,6 @@ class User_model
                 $this->db->bind('judul_section', $data['judul_section']);
                 $this->db->bind('judul', $data['judul']);
                 $this->db->bind('judul_warna', $data['judul_warna']);
-                $this->db->bind('desc_judul', $data['desc_judul']);
                 $this->db->bind('gambar_tentang', $nama_gambar_baru . '.jpg');
                 $this->db->bind('judul_konten', $data['judul_konten']);
                 $this->db->bind('konten_tentang', $data['konten_tentang']);

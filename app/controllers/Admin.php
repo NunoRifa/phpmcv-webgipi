@@ -4,7 +4,7 @@ class Admin extends Controller
 {
     public function index()
     {
-        if ($_SESSION['username'] == null || $_SESSION['username'] == 0 || $_SESSION['username'] == '') {
+        if ($_SESSION['username'] == '') {
             header('Location: ' . BASEURL . '/Admin/login');
         }
 
@@ -12,9 +12,24 @@ class Admin extends Controller
         $data['breadcrumb_active'] = 'Dashboard';
         $data['breadcrumb_link'] = BASEURL . '/Admin/index';
 
+        $data['getDataGeneral'] = $this->model('User_model')->getGeneral();
+
         $this->view('templates/header_admin', $data);
-        $this->view('dashboard/index');
+        $this->view('dashboard/index', $data);
         $this->view('templates/footer_admin');
+    }
+
+    public function ubahIndex()
+    {
+        if( $this->model('User_model')->ubahDataGeneral($_POST) > 0 ) {
+            Flasher::setFlash('Data', 'berhasil', 'diubah', 'success');
+            header('Location: ' . BASEURL . '/Admin/index');
+            exit;
+        } else {
+            Flasher::setFlash('Data', 'gagal', 'diubah', 'danger');
+            header('Location: ' . BASEURL . '/Admin/index');
+            exit;
+        } 
     }
 
     public function login()
@@ -25,7 +40,7 @@ class Admin extends Controller
     public function processLogin()
     {
         $result = $this->model('User_model')->getLogin();
-        $data['username'] = $this->model('User_model')->getLogin();
+        // $data['username'] = $this->model('User_model')->getLogin();
 
         if ($result == 'login') {
             header('Location: ' . BASEURL . '/Admin/index');
@@ -46,7 +61,7 @@ class Admin extends Controller
     /* ============================ Header ============================ */
     public function header()
     {
-        if ($_SESSION['username'] == null || $_SESSION['username'] == 0 || $_SESSION['username'] == '') {
+        if ($_SESSION['username'] == '') {
             header('Location: ' . BASEURL . '/Admin/login');
         }
 
@@ -77,7 +92,7 @@ class Admin extends Controller
     /* ============================ About ============================ */
     public function about()
     {
-        if ($_SESSION['username'] == null || $_SESSION['username'] == 0 || $_SESSION['username'] == '') {
+        if ($_SESSION['username'] == '') {
             header('Location: ' . BASEURL . '/Admin/login');
         }
 
@@ -108,7 +123,7 @@ class Admin extends Controller
     /* ============================ Services ============================ */
     public function services()
     {
-        if ($_SESSION['username'] == null || $_SESSION['username'] == 0 || $_SESSION['username'] == '') {
+        if ($_SESSION['username'] == '') {
             header('Location: ' . BASEURL . '/Admin/login');
         }
 
@@ -171,7 +186,7 @@ class Admin extends Controller
     /* ============================ Portfolio ============================ */
     public function portfolio()
     {
-        if ($_SESSION['username'] == null || $_SESSION['username'] == 0 || $_SESSION['username'] == '') {
+        if ($_SESSION['username'] == '') {
             header('Location: ' . BASEURL . '/Admin/login');
         }
 
@@ -215,7 +230,7 @@ class Admin extends Controller
     /* ============================ Gallery ============================ */
     public function gallery()
     {
-        if ($_SESSION['username'] == null || $_SESSION['username'] == 0 || $_SESSION['username'] == '') {
+        if ($_SESSION['username'] == '') {
             header('Location: ' . BASEURL . '/Admin/login');
         }
 
@@ -305,7 +320,7 @@ class Admin extends Controller
     /* ============================ History ============================ */
     public function history()
     {
-        if ($_SESSION['username'] == null || $_SESSION['username'] == 0 || $_SESSION['username'] == '') {
+        if ($_SESSION['username'] == '') {
             header('Location: ' . BASEURL . '/Admin/login');
         }
 
@@ -377,7 +392,7 @@ class Admin extends Controller
     /* ============================ Visi ============================ */
     public function visi()
     {
-        if ($_SESSION['username'] == null || $_SESSION['username'] == 0 || $_SESSION['username'] == '') {
+        if ($_SESSION['username'] == '') {
             header('Location: ' . BASEURL . '/Admin/login');
         }
 
@@ -449,7 +464,7 @@ class Admin extends Controller
     /* ============================ Portfolio Content ============================ */
     public function portfolioContent()
     {
-        if ($_SESSION['username'] == null || $_SESSION['username'] == 0 || $_SESSION['username'] == '') {
+        if ($_SESSION['username'] == '') {
             header('Location: ' . BASEURL . '/Admin/login');
         }
 

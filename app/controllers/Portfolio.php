@@ -7,6 +7,7 @@ class Portfolio extends Controller {
         $data['listPage'] = $this->model('User_model')->getListNav();
         $data['simpleLink'] = $this->model('User_model')->getSimpleLink();
 
+        $data['getDataGeneral'] = $this->model('User_model')->getGeneral();
         $data['getDataPortfolio'] = $this->model('User_model')->getAllPortfolio();
         $data['getDataPortCon'] = $this->model('User_model')->getPortfolioContent();
         

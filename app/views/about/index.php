@@ -27,10 +27,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label>Deskripsi Judul</label>
                     <textarea class="form-control" name="desc_judul" rows="3" placeholder="Masukan Teks ..."><?= $data['desc_judul'] ?></textarea>
-                </div>
+                </div> -->
                 <hr>
                 <div class="row">
                     <div class="col-6">

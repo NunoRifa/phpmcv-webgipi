@@ -4,7 +4,6 @@
             <div class="section-title">
                 <h2><?= $data['judul_section'] ?></h2>
                 <h3><?= $data['judul'] ?> <span><?= $data['judul_warna'] ?></span></h3>
-                <p><?= $data['desc_judul'] ?></p>
             </div>
             <div class="row">
                 <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">

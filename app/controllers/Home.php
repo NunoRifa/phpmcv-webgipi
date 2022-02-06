@@ -6,6 +6,7 @@ class Home extends Controller {
         $data['judul'] = '';
         $data['listPage'] = $this->model('User_model')->getListNav();
         $data['simpleLink'] = $this->model('User_model')->getSimpleLink();
+        $data['getDataGeneral'] = $this->model('User_model')->getGeneral();
 
         /* Header */
         $data['getDataHeader'] = $this->model('User_model')->getAllHeader();

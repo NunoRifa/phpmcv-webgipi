@@ -7,6 +7,7 @@ class History extends Controller {
         $data['listPage'] = $this->model('User_model')->getListNav();
         $data['simpleLink'] = $this->model('User_model')->getSimpleLink();
 
+        $data['getDataGeneral'] = $this->model('User_model')->getGeneral();
         $data['getDataGambarHistory'] = $this->model('User_model')->getGambarHistory();
         $data['getDataHeaderHistory'] = $this->model('User_model')->getHeaderHistory();
         $data['getDataHistory'] = $this->model('User_model')->getHistory();
