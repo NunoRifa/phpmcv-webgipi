@@ -17,6 +17,7 @@ class Home extends Controller {
         /* Portfolio */
         $data['getDataPortfolio'] = $this->model('User_model')->getAllPortfolio();
         $data['getDataPortCon'] = $this->model('User_model')->getPortfolioContent();
+        $data['getDataPortfolioLimit'] = $this->model('User_model')->getPortfolioContentLimit();
         /* Gallery */
         $data['getDataSecGallery'] = $this->model('User_model')->getSecGallery();
         $data['getDataGallery'] = $this->model('User_model')->getGallery();

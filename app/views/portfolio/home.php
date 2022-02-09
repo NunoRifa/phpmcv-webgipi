@@ -5,7 +5,7 @@
             <p><?= $data['getDataPortfolio']['konten_portofolio'] ?></p>
         </div>
         <div class="row">
-            <?php foreach ($data['getDataPortCon'] as $data) : ?>
+            <?php foreach ($data['getDataPortfolioLimit'] as $data) : ?>
                 <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                     <div class="product">
                         <div class="product-img">

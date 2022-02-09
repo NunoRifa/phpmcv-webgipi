@@ -8,9 +8,10 @@
             <div class="col-lg-12 d-flex justify-content-center">
                 <ul id="gallery-flters">
                     <li data-filter="*" class="filter-active">All</li>
-                    <li data-filter=".filter-app">App</li>
-                    <li data-filter=".filter-card">Card</li>
-                    <li data-filter=".filter-web">Web</li>
+                    <li data-filter=".filter-dinas">Rumah Dinas</li>
+                    <li data-filter=".filter-tinggal">Rumah Tinggal</li>
+                    <li data-filter=".filter-asrama">Asrama</li>
+                    <li data-filter=".filter-gedung">Gedung</li>
                 </ul>
             </div>
         </div>

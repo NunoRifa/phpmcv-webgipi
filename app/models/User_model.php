@@ -138,7 +138,7 @@ class User_model
             return $this->db->rowCount();
         } else {
             $gambar_header = $_FILES['gambar_header']['name'];
-            $ekstensi_diperbolehkan = array('png', 'jpg');
+            $ekstensi_diperbolehkan = array('png', 'jpg', 'jpeg');
             $x = explode('.', $gambar_header);
             $ekstensi = strtolower(end($x));
             $file_tmp = $_FILES['gambar_header']['tmp_name'];
@@ -201,7 +201,7 @@ class User_model
             return $this->db->rowCount();
         } else {
             $gambar_tentang = $_FILES['gambar_tentang']['name'];
-            $ekstensi_diperbolehkan = array('png', 'jpg');
+            $ekstensi_diperbolehkan = array('png', 'jpg', 'jpeg');
             $x = explode('.', $gambar_tentang);
             $ekstensi = strtolower(end($x));
             $file_tmp = $_FILES['gambar_tentang']['tmp_name'];
@@ -394,7 +394,7 @@ class User_model
             return $this->db->rowCount();
         } else {
             $gambar_galeri = $_FILES['gambar_galeri']['name'];
-            $ekstensi_diperbolehkan = array('png', 'jpg');
+            $ekstensi_diperbolehkan = array('png', 'jpg', 'jpeg');
             $x = explode('.', $gambar_galeri);
             $ekstensi = strtolower(end($x));
             $file_tmp = $_FILES['gambar_galeri']['tmp_name'];
@@ -437,7 +437,7 @@ class User_model
             return $this->db->rowCount();
         } else {
             $gambar_galeri = $_FILES['gambar_galeri']['name'];
-            $ekstensi_diperbolehkan = array('png', 'jpg');
+            $ekstensi_diperbolehkan = array('png', 'jpg', 'jpeg');
             $x = explode('.', $gambar_galeri);
             $ekstensi = strtolower(end($x));
             $file_tmp = $_FILES['gambar_galeri']['tmp_name'];
@@ -492,7 +492,7 @@ class User_model
             echo "<script>alert('Harap masukan gambar!');window.location='" . BASEURL . "/Admin/history';</script>";
         } else {
             $gambar_sejarah = $_FILES['gambar_sejarah']['name'];
-            $ekstensi_diperbolehkan = array('png', 'jpg');
+            $ekstensi_diperbolehkan = array('png', 'jpg', 'jpeg');
             $x = explode('.', $gambar_sejarah);
             $ekstensi = strtolower(end($x));
             $file_tmp = $_FILES['gambar_sejarah']['tmp_name'];
@@ -664,7 +664,13 @@ class User_model
     /* ============================ Portfolio Content ============================ */
     public function getPortfolioContent()
     {
-        $this->db->query('SELECT * FROM portfolio_content');
+        $this->db->query('SELECT * FROM portfolio_content ORDER BY id DESC');
+        return $this->db->resultSet();
+    }
+
+    public function getPortfolioContentLimit()
+    {
+        $this->db->query('SELECT * FROM portfolio_content ORDER BY id DESC LIMIT 4');
         return $this->db->resultSet();
     }
 
@@ -682,7 +688,7 @@ class User_model
             return $this->db->rowCount();
         } else {
             $gambar_konpor = $_FILES['gambar_konpor']['name'];
-            $ekstensi_diperbolehkan = array('png', 'jpg');
+            $ekstensi_diperbolehkan = array('png', 'jpg', 'jpeg');
             $x = explode('.', $gambar_konpor);
             $ekstensi = strtolower(end($x));
             $file_tmp = $_FILES['gambar_konpor']['tmp_name'];
@@ -732,7 +738,7 @@ class User_model
             return $this->db->rowCount();
         } else {
             $gambar_konpor = $_FILES['gambar_konpor']['name'];
-            $ekstensi_diperbolehkan = array('png', 'jpg');
+            $ekstensi_diperbolehkan = array('png', 'jpg', 'jpeg');
             $x = explode('.', $gambar_konpor);
             $ekstensi = strtolower(end($x));
             $file_tmp = $_FILES['gambar_konpor']['tmp_name'];
@@ -743,14 +749,14 @@ class User_model
             if (in_array($ekstensi, $ekstensi_diperbolehkan) === true) {
                 move_uploaded_file($file_tmp, SITE_ROOT . '/img/clients/' . $nama_gambar_baru . '.jpg');
                 $query = "UPDATE portfolio_content 
-                        SET judul_gambar = :judul_gambar,
-                            konten_gambar = :konten_gambar,
+                        SET judul_konpor = :judul_konpor,
+                            konten_konpor = :konten_konpor,
                             gambar_konpor = :gambar_konpor
                         WHERE id = :id";
 
                 $this->db->query($query);
-                $this->db->bind('judul_gambar', $data['judul_gambar']);
-                $this->db->bind('konten_gambar', $data['konten_gambar']);
+                $this->db->bind('judul_konpor', $data['judul_konpor']);
+                $this->db->bind('konten_konpor', $data['konten_konpor']);
                 $this->db->bind('gambar_konpor', $nama_gambar_baru . '.jpg');
                 $this->db->bind('id', $data['id']);
 

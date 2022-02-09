@@ -94,9 +94,10 @@
                         <label>Kategori Gambar</label>
                         <select class="form-control" id="konten_gambar" name="konten_gambar" required>
                             <option value="" selected disabled>--- Pilih ---</option>
-                            <option value="filter-app">APP</option>
-                            <option value="filter-card">CARD</option>
-                            <option value="filter-web">WEBSITE</option>
+                            <option value="filter-dinas">Rumah Dinas</option>
+                            <option value="filter-tinggal">Rumah Tinggal</option>
+                            <option value="filter-asrama">Asrama</option>
+                            <option value="filter-gedung">Gedung</option>
                         </select>
                     </div>
                     <div class="form-group">
