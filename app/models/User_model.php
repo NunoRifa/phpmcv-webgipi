@@ -121,7 +121,7 @@ class User_model
 
     public function ubahDataHeader($data)
     {
-        if ($_FILES['gambar_header']['name'] == '' || $_FILES['gambar_header']['name'] == null || $_FILES['gambar_header']['name'] == 0) {
+        if ($_FILES['gambar_header']['name'] == '' || $_FILES['gambar_header']['name'] == null) {
             $query = "UPDATE header 
                             SET judul_header = :judul_header,
                                 judul_warna_header = :judul_warna_header,
@@ -180,7 +180,7 @@ class User_model
 
     public function ubahDataAbout($data)
     {
-        if ($_FILES['gambar_tentang']['name'] == '' || $_FILES['gambar_tentang']['name'] == null || $_FILES['gambar_tentang']['name'] == 0) {
+        if ($_FILES['gambar_tentang']['name'] == '' || $_FILES['gambar_tentang']['name'] == null) {
             $query = "UPDATE aboutus 
                         SET judul_section = :judul_section,
                             judul = :judul,
@@ -382,7 +382,7 @@ class User_model
 
     public function tambahGallery($data)
     {
-        if ($_FILES['gambar_galeri']['name'] == '' || $_FILES['gambar_galeri']['name'] == null || $_FILES['gambar_galeri']['name'] == 0) {
+        if ($_FILES['gambar_galeri']['name'] == '' || $_FILES['gambar_galeri']['name'] == null) {
             $query = "INSERT INTO gallery
                     VALUES ('', :judul_gambar, :konten_gambar, '')";
 
@@ -422,7 +422,7 @@ class User_model
 
     public function ubahGallery($data)
     {
-        if ($_FILES['gambar_galeri']['name'] == '' || $_FILES['gambar_galeri']['name'] == null || $_FILES['gambar_galeri']['name'] == 0) {
+        if ($_FILES['gambar_galeri']['name'] == '' || $_FILES['gambar_galeri']['name'] == null) {
             $query = "UPDATE gallery 
                         SET judul_gambar = :judul_gambar,
                             konten_gambar = :konten_gambar
@@ -488,7 +488,7 @@ class User_model
 
     public function tambahGambarSejarah($data)
     {
-        if ($_FILES['gambar_sejarah']['name'] == '' || $_FILES['gambar_sejarah']['name'] == null || $_FILES['gambar_sejarah']['name'] == 0) {
+        if ($_FILES['gambar_sejarah']['name'] == '' || $_FILES['gambar_sejarah']['name'] == null) {
             echo "<script>alert('Harap masukan gambar!');window.location='" . BASEURL . "/Admin/history';</script>";
         } else {
             $gambar_sejarah = $_FILES['gambar_sejarah']['name'];
@@ -670,7 +670,7 @@ class User_model
 
     public function tambahPortfolioContent($data)
     {
-        if ($_FILES['gambar_konpor']['name'] == '' || $_FILES['gambar_konpor']['name'] == null || $_FILES['gambar_konpor']['name'] == 0) {
+        if ($_FILES['gambar_konpor']['name'] == '' || $_FILES['gambar_konpor']['name'] == null) {
             $query = "INSERT INTO portfolio_content
                     VALUES ('', :judul_konpor, :konten_konpor, '')";
 
@@ -717,7 +717,7 @@ class User_model
 
     public function ubahPortfolioContent($data)
     {
-        if ($_FILES['gambar_konpor']['name'] == '' || $_FILES['gambar_konpor']['name'] == null || $_FILES['gambar_konpor']['name'] == 0) {
+        if ($_FILES['gambar_konpor']['name'] == '' || $_FILES['gambar_konpor']['name'] == null) {
             $query = "UPDATE portfolio_content 
                         SET judul_konpor = :judul_konpor,
                             konten_konpor = :konten_konpor

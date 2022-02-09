@@ -195,7 +195,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #106eea;
 }
 #header .logo img {
-  max-height: 40px;
+  max-height: 80px;
 }
 
 .scrolled-offset {
@@ -415,7 +415,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 75vh;
-  background: url("../img/hero-bg.jpg") top left;
+  /* background: url("../img/hero-bg.jpg") top left; */
   background-size: cover;
   position: relative;
 }
@@ -427,6 +427,12 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   right: 0;
+}
+#hero img {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  background-size: cover;
 }
 #hero .container {
   position: relative;
@@ -1331,6 +1337,9 @@ section {
   color: #444444;
   font-size: 14px;
   background: #f1f6fe;
+}
+#footer .logo img {
+  max-height: 150px;
 }
 #footer .footer-newsletter {
   padding: 50px 0;

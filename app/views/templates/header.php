@@ -8,6 +8,7 @@
     <title><?= $data['judul']; ?> PT. Giri Permata Indo</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
+    <link rel="icon" href="<?= BASEURL; ?>/img/fav-icon.png">
 
     <!-- Vendor -->
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/bootstrap.min.css">
@@ -37,9 +38,9 @@
     </section>
     <header id="header" class="d-flex align-items-center">
         <div class="container d-flex align-items-center justify-content-between">
-            <h1 class="logo"><a href="index.html">LOGO</a></h1>
+            <!-- <h1 class="logo"><a href="index.html">LOGO</a></h1> -->
             <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo"><img src="<?= BASEURL; ?>/img/logo.png" alt=""></a> -->
+            <a href="<?= BASEURL; ?>" class="logo"><img src="<?= BASEURL; ?>/img/icon.png" alt="Icon"></a>
             <nav id="navbar" class="navbar">
                 <ul>
                     <?php foreach ($data['listPage'] as $listPage) : ?>

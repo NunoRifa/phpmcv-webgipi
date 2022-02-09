@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 footer-contact">
-                    <h3>LOGO PT</h3>
+                    <a href="<?= BASEURL; ?>" class="logo"><img src="<?= BASEURL; ?>/img/icon.png" alt="Icon"></a>
                     <p>
                         <?= $data['getDataGeneral']['alamat'] ?>
                         <br><br>
