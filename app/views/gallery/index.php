@@ -91,7 +91,7 @@
                         <input type="text" class="form-control" name="judul_gambar" id="judul_gambar" autocomplete="off" required>
                     </div>
                     <div class="form-group">
-                        <label>Konten Gambar</label>
+                        <label>Kategori Gambar</label>
                         <select class="form-control" id="konten_gambar" name="konten_gambar" required>
                             <option value="" selected disabled>--- Pilih ---</option>
                             <option value="filter-app">APP</option>
@@ -105,6 +105,7 @@
                             <input type="file" class="custom-file-input" name="gambar_galeri" id="gambar_galeri">
                             <label class="custom-file-label" for="customFile"></label>
                         </div>
+                        <small class="text-danger"><?= EKSTENSI ?></small>
                     </div>
                 </div>
                 <div class="modal-footer">

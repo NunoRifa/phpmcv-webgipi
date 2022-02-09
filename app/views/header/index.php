@@ -6,7 +6,7 @@
         <h3 class="card-title">Form Input Header</h3>
     </div>
     <?php foreach ($data['getData'] as $data) : ?>
-        <form action="<?= BASEURL; ?>/Admin/ubahHeader" method="post">
+        <form action="<?= BASEURL; ?>/Admin/ubahHeader" method="post" enctype='multipart/form-data'>
             <div class="card-body">
                 <div class="row">
                     <div class="col-6">
@@ -26,6 +26,20 @@
                 <div class="form-group">
                     <label for="konten_header">Konten</label>
                     <textarea name="konten_header" id="konten_header" class="form-control" rows="3" placeholder="Masukan Teks ..."><?= $data['konten_header'] ?></textarea>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Gambar</label>
+                            <br>
+                            <img src="<?= BASEURL ?>/img/header/<?= $data['gambar_header'] ?>" alt="Component" style="width:150px;height:150px;object-fit:cover;">
+                            <div class="custom-file mt-2">
+                                <input type="file" class="custom-file-input" name="gambar_header">
+                                <label class="custom-file-label" for="customFile"><?= $data['gambar_header'] ?></label>
+                            </div>
+                            <small class="text-danger"><?= EKSTENSI ?></small>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="card-footer">

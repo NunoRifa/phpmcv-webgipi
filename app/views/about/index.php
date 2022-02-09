@@ -42,6 +42,7 @@
                                 <input type="file" class="custom-file-input" name="gambar_tentang">
                                 <label class="custom-file-label" for="customFile"><?= $data['gambar_tentang'] ?></label>
                             </div>
+                            <small class="text-danger"><?= EKSTENSI ?></small>
                         </div>
                     </div>
                 </div>

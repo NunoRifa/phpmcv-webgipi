@@ -40,8 +40,6 @@ class User_model
         ]
     ];
 
-    private $nama = 'Doddy Ferdiansyah';
-
     public function __construct()
     {
         $this->db = new Database;
@@ -80,7 +78,7 @@ class User_model
         return $this->simpleLink;
     }
 
-    
+
     /* ============================ General ============================ */
     public function getGeneral()
     {
@@ -123,20 +121,53 @@ class User_model
 
     public function ubahDataHeader($data)
     {
-        $query = "UPDATE header 
-                    SET judul_header = :judul_header,
-                        judul_warna_header = :judul_warna_header,
-                        konten_header = :konten_header
-                    WHERE id = :id";
+        if ($_FILES['gambar_header']['name'] == '' || $_FILES['gambar_header']['name'] == null || $_FILES['gambar_header']['name'] == 0) {
+            $query = "UPDATE header 
+                            SET judul_header = :judul_header,
+                                judul_warna_header = :judul_warna_header,
+                                konten_header = :konten_header
+                            WHERE id = :id";
 
-        $this->db->query($query);
-        $this->db->bind('judul_header', $data['judul_header']);
-        $this->db->bind('judul_warna_header', $data['judul_warna_header']);
-        $this->db->bind('konten_header', $data['konten_header']);
-        $this->db->bind('id', $data['id']);
+            $this->db->query($query);
+            $this->db->bind('judul_header', $data['judul_header']);
+            $this->db->bind('judul_warna_header', $data['judul_warna_header']);
+            $this->db->bind('konten_header', $data['konten_header']);
+            $this->db->bind('id', $data['id']);
 
-        $this->db->execute();
-        return $this->db->rowCount();
+            $this->db->execute();
+            return $this->db->rowCount();
+        } else {
+            $gambar_header = $_FILES['gambar_header']['name'];
+            $ekstensi_diperbolehkan = array('png', 'jpg');
+            $x = explode('.', $gambar_header);
+            $ekstensi = strtolower(end($x));
+            $file_tmp = $_FILES['gambar_header']['tmp_name'];
+            $validasi = 'header_image_';
+            $angka_acak = rand(1, 999);
+            $nama_gambar_baru = $validasi . $angka_acak;
+
+            if (in_array($ekstensi, $ekstensi_diperbolehkan) === true) {
+                move_uploaded_file($file_tmp, SITE_ROOT . '/img/header/' . $nama_gambar_baru . '.jpg');
+                $query = "UPDATE header 
+                            SET judul_header = :judul_header,
+                                judul_warna_header = :judul_warna_header,
+                                konten_header = :konten_header,
+                                gambar_header = :gambar_header
+                            WHERE id = :id";
+
+                $this->db->query($query);
+                $this->db->bind('judul_header', $data['judul_header']);
+                $this->db->bind('judul_warna_header', $data['judul_warna_header']);
+                $this->db->bind('konten_header', $data['konten_header']);
+                $this->db->bind('gambar_header', $nama_gambar_baru . '.jpg');
+                $this->db->bind('id', $data['id']);
+
+                $this->db->execute();
+                return $this->db->rowCount();
+            } else {
+                echo "<script>alert('Ekstensi gambar yang boleh hanya jpg atau png.');window.location='" . BASEURL . "/Admin/about';</script>";
+            }
+        }
     }
     /* ============================ End Header ============================ */
 
@@ -583,7 +614,7 @@ class User_model
         $this->db->execute();
         return $this->db->rowCount();
     }
-    
+
     public function ubahDataVisi($data)
     {
         $query = "UPDATE visi 

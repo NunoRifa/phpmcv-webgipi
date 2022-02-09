@@ -4,8 +4,7 @@
 define('BASEURL', 'https://giripermataindo.com');
 define('EMAIL', 'giripermataindo@yahoo.com');
 define('PHONE', '+62 853 2120 8989');
-define('USERNAME', 'giriperm_admin');
-define('PASSWORD', 'U@?uv3]#uYX2');
+define('EKSTENSI', 'Note: Masukan gambar berekstensi JPG / JPEG atau PNG');
 
 /* DB */
 define('DB_HOST', 'localhost');

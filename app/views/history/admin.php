@@ -106,6 +106,7 @@
                             <input type="file" class="custom-file-input" name="gambar_sejarah" id="gambar_sejarah">
                             <label class="custom-file-label" for="customFile"></label>
                         </div>
+                        <small class="text-danger"><?= EKSTENSI ?></small>
                     </div>
                 </div>
                 <div class="modal-footer">
