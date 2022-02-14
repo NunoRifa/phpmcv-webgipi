@@ -95,7 +95,7 @@
                         <select class="form-control" id="konten_gambar" name="konten_gambar" required>
                             <option value="" selected disabled>--- Pilih ---</option>
                             <option value="filter-dinas">Rumah Dinas</option>
-                            <option value="filter-tinggal">Rumah Tinggal</option>
+                            <option value="filter-kontrak">Kontrak</option>
                             <option value="filter-asrama">Asrama</option>
                             <option value="filter-gedung">Gedung</option>
                         </select>

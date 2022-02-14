@@ -29,7 +29,6 @@
                 </div>
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>Sosial Media Kami</h4>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem, hic.</p>
                     <div class="social-links mt-3">
                         <a href="<?= $data['getDataGeneral']['facebook'] ?>" class="facebook"><i class="bx bxl-facebook"></i></a>
                         <a href="<?= $data['getDataGeneral']['instagram'] ?>" class="instagram"><i class="bx bxl-instagram"></i></a>
